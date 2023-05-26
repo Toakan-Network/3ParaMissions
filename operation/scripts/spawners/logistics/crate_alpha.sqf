@@ -17,7 +17,7 @@ switch (_map) do
 if (!isnil "_map") then {
 
 	// Setup box
-	_spawnVhc = createVehicle ["rhs_7ya37_1_single", _posA,[],0,"NONE"];
+	_spawnVhc = createVehicle ["plp_ct_MilBoxSmallOlive", _posA,[],0,"NONE"];
 	_spawnVhc setDir 0;
 	_spawnVhc enableDynamicSimulation true;
 

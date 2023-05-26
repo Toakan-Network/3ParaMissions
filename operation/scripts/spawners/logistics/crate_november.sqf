@@ -1,6 +1,10 @@
-// Sharpshooter Ammo
+// November - 81mm Smokes
 private _map = worldName;
 private _posA = [];
+// Container name, ie the box name the stuffs going in.
+private _vhcName = "plp_ct_MilBoxSmallOlive";
+// Only set this if you are using single ammo type, else do it the long way.
+private _ammoName = "UK3CB_BAF_1Rnd_81mm_Mo_Smoke_White";
 
 switch (_map) do
 {
@@ -18,7 +22,7 @@ switch (_map) do
 if (!isnil "_map") then {
 
 	// Setup box
-	_spawnVhc = createVehicle ["plp_ct_MilBoxSmallOlive", _posA,[],0,"NONE"];
+	_spawnVhc = createVehicle [_vhcName, _posA,[],0,"NONE"];
 	_spawnVhc setDir 0;
 	_spawnVhc enableDynamicSimulation true;
 
@@ -28,6 +32,6 @@ if (!isnil "_map") then {
 	clearWeaponCargoGlobal _spawnVhc;
 
 	// Fill with required items.
-	_spawnVhc addItemCargoGlobal ["greenmag_ammo_762x54_basic_30Rnd", 40];
+	_spawnVhc addMagazineAmmoCargo  [_ammoName, 20, 20]; 
 
 };

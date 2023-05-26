@@ -1,11 +1,19 @@
-// Lima - .50 Box
+// Lima - 81mm HE
 private _map = worldName;
 private _posA = [];
+// Container name, ie the box name the stuffs going in.
+private _vhcName = "plp_ct_MilBoxSmallOlive";
+// Only set this if you are using single ammo type, else do it the long way.
+private _ammoName = "UK3CB_BAF_1Rnd_81mm_Mo_Shells";
 
 switch (_map) do
 {
 	case "rof_mok": {
 		_posA = [[9882.280,19580.297,0], 0, 5, 5] call BIS_fnc_findSafePos;;
+	};
+
+	case "Napf":{
+		_posA = [[15088.358,16471.05,0], 0, 7, 5] call BIS_fnc_findSafePos;
 	};
 
 	default {false};
@@ -14,7 +22,7 @@ switch (_map) do
 if (!isnil "_map") then {
 
 	// Setup box
-	_spawnVhc = createVehicle ["rhs_7ya37_1_single", _posA,[],0,"NONE"];
+	_spawnVhc = createVehicle [_vhcName, _posA,[],0,"NONE"];
 	_spawnVhc setDir 0;
 	_spawnVhc enableDynamicSimulation true;
 
@@ -24,6 +32,6 @@ if (!isnil "_map") then {
 	clearWeaponCargoGlobal _spawnVhc;
 
 	// Fill with required items.
-	_spawnVhc addItemCargoGlobal ["greenmag_ammo_556x45_basic_30Rnd", 40];
+	_spawnVhc addMagazineAmmoCargo  [_ammoName, 20, 20]; 
 
 };
