@@ -4,7 +4,7 @@ private _posA = [];
 // Container name, ie the box name the stuffs going in.
 private _vhcName = "plp_ct_MilBoxSmallOlive";
 // Only set this if you are using single ammo type, else do it the long way.
-private _ammoName = "UK3CB_BAF_1Rnd_81mm_Mo_Shells";
+private _ammoName = "UK3CB_BAF_1Rnd_81mm_Mo_Smoke_White";
 
 switch (_map) do
 {
