@@ -31,6 +31,8 @@ GCam_Users = [
 _staff = InA_Server_coreStaffUIDs + InA_Server_staffUIDs; 
 ServerAdmins = _staff;
 
+// We set the variables here, so they can't be modified in flight and the server always has the true information.
+// Yes this requires a server restart to push entries to the server array's but oh well.
 publicvariable "ServerAdmins";
 publicVariable "GCam_Users";
 
