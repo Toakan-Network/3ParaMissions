@@ -1,4 +1,5 @@
 # 3ParaMissions
+## Direct commits to this repository require review by J4 Staff. 
 ## To use this repository.
 - Copy the mission file (missions\<missionname>.sqm) to a root directory
 - Rename to mission.sqm
@@ -26,4 +27,8 @@ onLoadMission = "After a long and tiring operation, 3rd Battalion, The Parachute
 loadScreen = "textures\fenrir.paa";
 ```
 
-# Direct commits to this repository require review by J4 Staff. 
+## Modlist 
+The modlist contains the list of mods which the mission files will all need to be developed using. 
+### DO NOT ADD THE QOL MODS WHEN EDITING MISSION FILES
+
+
