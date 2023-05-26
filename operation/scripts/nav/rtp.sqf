@@ -1,3 +1,6 @@
+// Random Tele-Porter.sqf 
+// For use on the training server only, otherwise you'll end up somwhere random...
+
 removeallactions player;
 player unassignItem "ItemGPS";
 player removeItem "ItemGPS";
