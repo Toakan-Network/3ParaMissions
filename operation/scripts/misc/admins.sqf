@@ -1,3 +1,5 @@
+// File only to be modified with review and confirmation by J4 Head & J1 Heads of office.
+
 InA_Server_coreStaffUIDs = [ 
  "76561197991835568"  // Tad 
   //,"76561198263317224"  // Minstreal 
