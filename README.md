@@ -26,6 +26,14 @@ onLoadName	= "Pre-Deployment Training";
 onLoadMission = "After a long and tiring operation, 3rd Battalion, The Parachute Regiment is gearing up for a new campaign.";
 loadScreen = "textures\fenrir.paa";
 ```
+## Creating a new Mission file
+Under the mission-settings folder, is an SQF file with all operational settings for ACE, 3CB ect. When the new mission is being setup, this file needs to be imported to the Eden Editor and saved as the new mission.
+
+There is a difference for the Training Server settings, the below needs to be set with values = 999, to disable the survival options.
+```
+force acex_field_rations_timeWithoutFood = 2;
+force acex_field_rations_timeWithoutWater = 2;
+```
 
 ## Modlist 
 The modlist contains the list of mods which the mission files will all need to be developed using. 
