@@ -1,0 +1,60 @@
+comment "Remove existing items";
+removeAllWeapons player;
+removeAllItems player;
+removeAllAssignedItems player;
+removeUniform player;
+removeVest player;
+removeBackpack player;
+removeHeadgear player;
+removeGoggles player;
+
+comment "Add weapons";
+player addWeapon "rhsusf_weap_glock17g4";
+player addHandgunItem "rhsusf_mag_17Rnd_9x19_JHP";
+
+comment "Add containers";
+player forceAddUniform "raf_617sqn_pltoff";
+player addVest "SRU21P_LPU9P_PCU15AP_Alt";
+player addBackpack "UK3CB_B_Invisible";
+
+comment "Add binoculars";
+player addWeapon "Binocular";
+
+comment "Add items to containers";
+player addItemToUniform "FirstAidKit";
+player addItemToVest "USP_PVS15";
+player addItemToVest "ACRE_PRC343";
+player addItemToVest "ItemAndroid";
+player addItemToVest "ItemcTabHCam";
+player addItemToVest "KNB_Notebook";
+player addItemToVest "ACE_Flashlight_XL50";
+player addItemToVest "KNB_PanelRed";
+player addItemToVest "ACE_IR_Strobe_Item";
+player addItemToVest "ACE_MapTools";
+for "_i" from 1 to 2 do {player addItemToVest "ACE_EarPlugs";};
+for "_i" from 1 to 5 do {player addItemToVest "ACE_quikclot";};
+for "_i" from 1 to 10 do {player addItemToVest "ACE_packingBandage";};
+for "_i" from 1 to 10 do {player addItemToVest "ACE_elasticBandage";};
+for "_i" from 1 to 2 do {player addItemToVest "ACE_morphine";};
+for "_i" from 1 to 2 do {player addItemToVest "kat_guedel";};
+for "_i" from 1 to 2 do {player addItemToVest "ACE_epinephrine";};
+for "_i" from 1 to 3 do {player addItemToVest "ACE_tourniquet";};
+for "_i" from 1 to 2 do {player addItemToVest "ACE_splint";};
+for "_i" from 1 to 2 do {player addItemToVest "kat_chestSeal";};
+for "_i" from 1 to 2 do {player addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";};
+player addItemToBackpack "ACRE_PRC117F";
+for "_i" from 1 to 3 do {player addItemToBackpack "ACE_Canteen";};
+for "_i" from 1 to 3 do {player addItemToBackpack "ACE_MRE_BeefStew";};
+player addItemToBackpack "3para_beret1_raf";
+for "_i" from 1 to 2 do {player addItemToBackpack "MS_Strobe_Mag_2";};
+for "_i" from 1 to 2 do {player addItemToBackpack "MS_Strobe_Mag_1";};
+for "_i" from 1 to 3 do {player addItemToBackpack "SmokeShellPurple";};
+player addItemToBackpack "ACE_Chemlight_IR";
+for "_i" from 1 to 2 do {player addItemToBackpack "ACE_HandFlare_Red";};
+player addHeadgear "JHMCS_MBU20P";
+
+comment "Add items";
+player linkItem "ItemMap";
+player linkItem "ItemCompass";
+player linkItem "ItemWatch";
+player linkItem "ItemGPS";

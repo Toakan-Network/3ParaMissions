@@ -1,0 +1,13 @@
+_spawner = _this select 0;
+_spawner addaction ["Spawn Crate Alpha","scripts\spawners\logistics\crate_alpha.sqf"];
+_spawner addaction ["Spawn Crate Bravo","scripts\spawners\logistics\crate_bravo.sqf"];
+_spawner addaction ["Spawn Crate Charlie","scripts\spawners\logistics\crate_charlie.sqf"];
+_spawner addaction ["Spawn Crate Delta","scripts\spawners\logistics\crate_delta.sqf"];
+_spawner addaction ["Spawn Crate Echo","scripts\spawners\logistics\crate_echo.sqf"];
+_spawner addaction ["Spawn Crate Foxtrot","scripts\spawners\logistics\crate_foxtrot.sqf"];
+_spawner addaction ["Spawn Crate Golf","scripts\spawners\logistics\crate_golf.sqf"];
+_spawner addaction ["Spawn Crate Hotel","scripts\spawners\logistics\crate_hotel.sqf"];
+_spawner addaction ["Spawn Crate India","scripts\spawners\logistics\crate_india.sqf"];
+_spawner addaction ["Spawn Crate Juliet","scripts\spawners\logistics\crate_juliet.sqf"];
+_spawner addaction ["Spawn Crate Kilo","scripts\spawners\logistics\crate_kilo.sqf"];
+_spawner addaction ["Spawn Crate Lima","scripts\spawners\logistics\crate_Lima.sqf"];

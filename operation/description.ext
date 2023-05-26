@@ -1,0 +1,32 @@
+author			= "3PARA";
+onLoadName	= "Pre-Deployment Training";
+onLoadMission = "After a long and tiring operation, 3rd Battalion, The Parachute Regiment is gearing up for a new campaign.";
+loadScreen = "textures\fenrir.paa";
+
+respawnOnStart = 0;
+disabledAI = 1;
+
+class Header
+{
+	gameType =  RPG;
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 150;	// maximum number of players the mission supports
+};
+
+#include "includes\gcam_component.hpp"    // GCam Mods
+
+class CfgFunctions
+{	
+  #include "functions\cfgfunctions.hpp"
+};
+
+
+class CfgSounds
+{
+
+};
+
+class CfgDebriefing 
+{
+  #include "includes\zeus_checks.hpp"
+};
