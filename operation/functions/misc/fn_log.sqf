@@ -10,17 +10,6 @@
 //
 //
 // Written by Tad Oct-31-2019
-/*
-    Description:
-        A simple logging function that'll write to the RPT & if needed log to admin channel
-    Author:
-        Stanhope
-
-    Params:
-        _msg:                   anything:   what you want to log
-        _prefix:                string:     the prefix, e.g. error, mainAO, ...
-        _sendInAdminChannel:    boolean:    true send to admin channel, false for not.
-*/
 
 if (!isServer) exitWith {
     _this remoteExec ["tad_fnc_log", 2];
@@ -28,11 +17,11 @@ if (!isServer) exitWith {
 
 params [
     "_msg",
-    ["_prefix", "LOG"],
+    ["_Filename", "LOG"],
     ["_sendInAdminChannel", false]
 ];
 
-private _assembled = format ["[%1] %2", (toUpper _prefix), _msg];
+private _message = format ["[%1] %2", (toUpper _Filename), _msg];
 
-[2, _assembled] execvm "scripts\performance\log.sqf";
+[2, _message] execvm "scripts\performance\log.sqf";
 
