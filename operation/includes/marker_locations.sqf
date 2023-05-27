@@ -1,14 +1,21 @@
-// Setup markers list for map, some maps can have additional markers, dependant on 
+// Dynamic marker generation, requires input of locations from map coords.
+// Created by Tad.
+// To add a new marker, setup the variable with the following example.
+// 
+// private _markername = ["marker_name",[_markerlocationarray],"ICON",[0,0],"PERSIST"];
+//
+
+// Setup markers list for map, some maps can have additional markers, dependant on map and requirement.
 private _markers = [];
 private _map = worldName;
 
 // Marker list
-private _arsenal_land_0 = []; // default training box
-private _arsenal_land_1 = []; // default hq box
-private _arsenal_land_2 = []; // 1 section
-private _arsenal_land_3 = []; // 2 section
-private _arsenal_land_4 = []; // 3 section
-private _arsenal_land_5 = []; // FSG
+private _arsenal_land_0 = ["arsenal_land_0",[],"ICON",[0,0],"PERSIST"]; // default training box
+private _arsenal_land_1 = ["arsenal_land_1",[],"ICON",[0,0],"PERSIST"]; // default hq box
+private _arsenal_land_2 = ["arsenal_land_2",[],"ICON",[0,0],"PERSIST"]; // 1 section
+private _arsenal_land_3 = ["arsenal_land_3",[],"ICON",[0,0],"PERSIST"]; // 2 section
+private _arsenal_land_4 = ["arsenal_land_4",[],"ICON",[0,0],"PERSIST"]; // 3 section
+private _arsenal_land_5 = ["arsenal_land_5",[],"ICON",[0,0],"PERSIST"]; // FSG
 
 private _arsenal_air_1 = []; // Aviation box 1
 
@@ -31,7 +38,7 @@ private _land_vehic_6 = []; // FSG Flavour thing
 switch (_map) do
 {
 	case "rof_mok": {
-        _arsenal_land_0 = ["arsenal_land_0",[],"ICON",[0,0],"PERSIST"];
+        (_arsenal_land_0 select 1) pushback [];
 
 	};
 
