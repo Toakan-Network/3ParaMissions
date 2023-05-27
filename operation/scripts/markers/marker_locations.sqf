@@ -1,16 +1,30 @@
-// Setup markers list for map, some maps can have additional markers, dependant on 
+// Dynamic marker generation, requires input of locations from map coords.
+// Created by Tad.
+// To add a new marker, setup the variable with the following example.
+// 
+// private _markername = ["marker_name",[_markerlocationarray],"ICON",[0,0],"PERSIST"];
+//
+// The marker then gets the location array based on the map, through set action.
+// _markername set [2, [0,0]]; 
+// With the second portion being the location array of the marker.
+
+if (!isServer) exitWith {
+    "Marker modification called by client." remoteExec ["tad_fnc_log", 2];
+};
+
+// Setup markers list for map, some maps can have additional markers, dependant on map and requirement.
 private _markers = [];
 private _map = worldName;
 
 // Marker list
-private _arsenal_land_0 = []; // default training box
-private _arsenal_land_1 = []; // default hq box
-private _arsenal_land_2 = []; // 1 section
-private _arsenal_land_3 = []; // 2 section
-private _arsenal_land_4 = []; // 3 section
-private _arsenal_land_5 = []; // FSG
+private _arsenal_land_0 = ["arsenal_land_0",[],"ICON",[0,0],"PERSIST"]; // default training box
+private _arsenal_land_1 = ["arsenal_land_1",[],"ICON",[0,0],"PERSIST"]; // default hq box
+private _arsenal_land_2 = ["arsenal_land_2",[],"ICON",[0,0],"PERSIST"]; // 1 section
+private _arsenal_land_3 = ["arsenal_land_3",[],"ICON",[0,0],"PERSIST"]; // 2 section
+private _arsenal_land_4 = ["arsenal_land_4",[],"ICON",[0,0],"PERSIST"]; // 3 section
+private _arsenal_land_5 = ["arsenal_land_5",[],"ICON",[0,0],"PERSIST"]; // FSG
 
-private _arsenal_air_1 = []; // Aviation box 1
+private _arsenal_air_0 = []; // Aviation box 1
 
 private _airframe_0 = []; // Wildcat 
 private _airframe_1 = []; // Chinnook
@@ -31,21 +45,59 @@ private _land_vehic_6 = []; // FSG Flavour thing
 switch (_map) do
 {
 	case "rof_mok": {
-        _arsenal_land_0 = ["arsenal_land_0",[],"ICON",[0,0],"PERSIST"];
-
+        _arsenal_land_0 set [2, [0,0]]; //
+        _arsenal_land_1 set [2, [0,0]]; //
+        _arsenal_land_2 set [2, [0,0]]; //
+        _arsenal_land_3 set [2, [0,0]]; //
+        _arsenal_land_4 set [2, [0,0]]; //
+        _arsenal_land_5 set [2, [0,0]]; //
+        _arsenal_air_0 set [2, [0,0]]; //
+        _airframe_0 set [2, [0,0]]; //
+        _airframe_1 set [2, [0,0]]; //
+        _airframe_2 set [2, [0,0]]; //
+        _airframe_3 set [2, [0,0]]; //
+        _airframe_4 set [2, [0,0]]; //
+        _airframe_5 set [2, [0,0]]; //
+        _land_vehic_0 set [2, [0,0]]; //
+        _land_vehic_1 set [2, [0,0]]; //
+        _land_vehic_2 set [2, [0,0]]; //
+        _land_vehic_3 set [2, [0,0]]; //
+        _land_vehic_4 set [2, [0,0]]; //
+        _land_vehic_5 set [2, [0,0]]; //
+        _land_vehic_6 set [2, [0,0]]; //
 	};
 
 	case "Napf":{
 		
 	};
 
-	default {false};
+	default {
+        // Default location is 0,0, or the corner of the map.
+        _arsenal_land_0 set [2, [0,0]]; //
+        _arsenal_land_1 set [2, [0,0]]; //
+        _arsenal_land_2 set [2, [0,0]]; //
+        _arsenal_land_3 set [2, [0,0]]; //
+        _arsenal_land_4 set [2, [0,0]]; //
+        _arsenal_land_5 set [2, [0,0]]; //
+        _arsenal_air_0 set [2, [0,0]]; //
+        _airframe_0 set [2, [0,0]]; //
+        _airframe_1 set [2, [0,0]]; //
+        _airframe_2 set [2, [0,0]]; //
+        _airframe_3 set [2, [0,0]]; //
+        _airframe_4 set [2, [0,0]]; //
+        _airframe_5 set [2, [0,0]]; //
+        _land_vehic_0 set [2, [0,0]]; //
+        _land_vehic_1 set [2, [0,0]]; //
+        _land_vehic_2 set [2, [0,0]]; //
+        _land_vehic_3 set [2, [0,0]]; //
+        _land_vehic_4 set [2, [0,0]]; //
+        _land_vehic_5 set [2, [0,0]]; //
+        _land_vehic_6 set [2, [0,0]]; //
+    };
 };
 
 // Build Marker array.
 _markers pushback _arsenal_land_0;
 
-// Populate map with markers.
-{
-    _x call CBA_fnc_createMarker;
-} foreach _markers;
+// Make available to the mission
+publicvariable _markers;
