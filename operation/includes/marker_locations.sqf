@@ -4,6 +4,9 @@
 // 
 // private _markername = ["marker_name",[_markerlocationarray],"ICON",[0,0],"PERSIST"];
 //
+// The marker then gets the location array based on the map, through set action.
+// _markername set [2, [0,0]]; 
+// With the second portion being the location array of the marker.
 
 // Setup markers list for map, some maps can have additional markers, dependant on map and requirement.
 private _markers = [];
@@ -17,7 +20,7 @@ private _arsenal_land_3 = ["arsenal_land_3",[],"ICON",[0,0],"PERSIST"]; // 2 sec
 private _arsenal_land_4 = ["arsenal_land_4",[],"ICON",[0,0],"PERSIST"]; // 3 section
 private _arsenal_land_5 = ["arsenal_land_5",[],"ICON",[0,0],"PERSIST"]; // FSG
 
-private _arsenal_air_1 = []; // Aviation box 1
+private _arsenal_air_0 = []; // Aviation box 1
 
 private _airframe_0 = []; // Wildcat 
 private _airframe_1 = []; // Chinnook
@@ -38,15 +41,55 @@ private _land_vehic_6 = []; // FSG Flavour thing
 switch (_map) do
 {
 	case "rof_mok": {
-        (_arsenal_land_0 select 1) pushback [];
-
+        _arsenal_land_0 set [2, [0,0]]; //
+        _arsenal_land_1 set [2, [0,0]]; //
+        _arsenal_land_2 set [2, [0,0]]; //
+        _arsenal_land_3 set [2, [0,0]]; //
+        _arsenal_land_4 set [2, [0,0]]; //
+        _arsenal_land_5 set [2, [0,0]]; //
+        _arsenal_air_0 set [2, [0,0]]; //
+        _airframe_0 set [2, [0,0]]; //
+        _airframe_1 set [2, [0,0]]; //
+        _airframe_2 set [2, [0,0]]; //
+        _airframe_3 set [2, [0,0]]; //
+        _airframe_4 set [2, [0,0]]; //
+        _airframe_5 set [2, [0,0]]; //
+        _land_vehic_0 set [2, [0,0]]; //
+        _land_vehic_1 set [2, [0,0]]; //
+        _land_vehic_2 set [2, [0,0]]; //
+        _land_vehic_3 set [2, [0,0]]; //
+        _land_vehic_4 set [2, [0,0]]; //
+        _land_vehic_5 set [2, [0,0]]; //
+        _land_vehic_6 set [2, [0,0]]; //
 	};
 
 	case "Napf":{
 		
 	};
 
-	default {false};
+	default {
+        // Default location is 0,0, or the corner of the map.
+        _arsenal_land_0 set [2, [0,0]]; //
+        _arsenal_land_1 set [2, [0,0]]; //
+        _arsenal_land_2 set [2, [0,0]]; //
+        _arsenal_land_3 set [2, [0,0]]; //
+        _arsenal_land_4 set [2, [0,0]]; //
+        _arsenal_land_5 set [2, [0,0]]; //
+        _arsenal_air_0 set [2, [0,0]]; //
+        _airframe_0 set [2, [0,0]]; //
+        _airframe_1 set [2, [0,0]]; //
+        _airframe_2 set [2, [0,0]]; //
+        _airframe_3 set [2, [0,0]]; //
+        _airframe_4 set [2, [0,0]]; //
+        _airframe_5 set [2, [0,0]]; //
+        _land_vehic_0 set [2, [0,0]]; //
+        _land_vehic_1 set [2, [0,0]]; //
+        _land_vehic_2 set [2, [0,0]]; //
+        _land_vehic_3 set [2, [0,0]]; //
+        _land_vehic_4 set [2, [0,0]]; //
+        _land_vehic_5 set [2, [0,0]]; //
+        _land_vehic_6 set [2, [0,0]]; //
+    };
 };
 
 // Build Marker array.
