@@ -7,6 +7,7 @@
  */
 
 params [["_unit", objNull]];
+private _scriptName = "addtoAdminChannel";
 
 if (!isServer) exitWith {};
 
@@ -20,7 +21,7 @@ if (isRemoteExecuted && {!([remoteExecutedOwner] call tad_fnc_isZeus)}) exitWith
         _caller = (_players # _playerIdx);
     };
 
-    private _msg = (format ["%1 :: Non Zeus player %2 (%3) tried to add themselves to the adminchannel!", _fnc_scriptName, (name _caller), (getPlayerUID _caller)]);
+    private _msg = (format ["%1 :: Non Zeus player %2 (%3) tried to add themselves to the adminchannel!", _scriptName, (name _caller), (getPlayerUID _caller)]);
     [_msg, "VIOLATION", true] call tad_fnc_log;
 };
 
