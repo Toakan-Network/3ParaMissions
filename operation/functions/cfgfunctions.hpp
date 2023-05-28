@@ -13,6 +13,8 @@ class tad {
         file = "functions\zeus";
         class updateEditableObjects {};
         class getEditableObjects {};
+        class assignzeus {};
+        class addToAdminChannel {};
     };
 
 };
