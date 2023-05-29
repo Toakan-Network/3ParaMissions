@@ -1,7 +1,7 @@
 // All-in-one logistic spawner.
 params ["_target", "_caller", "_actionId", "_arguments"];
 _boxName = _this param [3,"",[""]];
-[2, format ["Logistics spawning box: %1", _boxName]] execvm "scripts\performance\log.sqf";
+[2, format ["Logistics spawning box: %1, requested by: %2", _boxName, _caller]] execvm "scripts\performance\log.sqf";
 
 // Setup script variables.
 private _map = worldName;
