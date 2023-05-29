@@ -1,3 +1,5 @@
+// To add a new box copy the row below and change the box name, IE Alpha > Echo in both the 1st and 3rd parameter..
+// 
 _spawner = _this select 0;
 _spawner addaction ["Spawn Crate Alpha",	"scripts\spawners\logistics\crates.sqf", "alpha"];
 _spawner addaction ["Spawn Crate Bravo", 	"scripts\spawners\logistics\crates.sqf", "bravo"];
