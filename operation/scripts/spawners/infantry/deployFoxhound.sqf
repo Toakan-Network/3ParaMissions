@@ -16,6 +16,12 @@ switch (_map) do
 		_dir = 229;
 	};
 
+	case "NapfWinter":{
+		_posA = [14344.892,16934.951,0];
+		_posB = [14350.057,16928.713,0];
+		_dir = 229;
+	};
+
 	default {false};
 };
 

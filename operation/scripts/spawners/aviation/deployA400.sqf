@@ -14,6 +14,11 @@ switch (_map) do
 		_dir = 318;
 	};
 
+	case "NapfWinter":{
+		_posA = [15171.545,16215.987,0];
+		_dir = 318;
+	};
+
 	default {false};
 };
 

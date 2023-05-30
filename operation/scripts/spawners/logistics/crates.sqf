@@ -21,6 +21,10 @@ switch (_map) do
 		_posA = [[15088.358,16471.05,0], 0, 7, 5] call BIS_fnc_findSafePos;
 	};
 
+	case "NapfWinter":{
+		_posA = [[15088.358,16471.05,0], 0, 7, 5] call BIS_fnc_findSafePos;
+	};
+	
 	default {false};
 };
 
