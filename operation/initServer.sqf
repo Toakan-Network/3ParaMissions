@@ -49,5 +49,17 @@ missionNamespace setVariable ["zeus_updater", true];
 // Setup some Zeus things
 execvm "scripts\zeus\player_ping.sqf";
 
+// Setting up Save Data for ALIVE
+[] spawn {
+	["3Para_Alive_Save",_value] call ALiVE_fnc_ProfileNameSpaceSave;
+	_value = "3Para_Alive_Save" call ALiVE_fnc_ProfileNameSpaceLoad;
+	waitUntil {
+		!isNil "ALiVE_SYS_DATA_SOURCE";
+	};
+	if (ALiVE_SYS_DATA_SOURCE isEqualTo "pns") then {
+		[2, format ["Setting up ALIVE autosave."]] execvm "scripts\performance\log.sqf";
+		900 call ALiVE_fnc_AutoSave_PNS;
+	};
+};
 
 [2, format ["initServer Completed for map:%1", worldName]] execvm "scripts\performance\log.sqf";

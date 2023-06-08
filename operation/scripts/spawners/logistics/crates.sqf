@@ -45,7 +45,6 @@ switch _boxName do
 	case "charlie": {
 		_boxType = "UK3CB_BAF_Box_762_Ammo";
 		_contents pushback ["UK3CB_BAF_762_100Rnd", 20];
-		_contents pushback ["UK3CB_BAF_762_800Rnd", 5];
 	};
 
 	case "delta": {
