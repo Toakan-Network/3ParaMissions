@@ -30,7 +30,7 @@ missionNamespace setVariable ["zeus_updater", true];
 	while {zeus_whitelist_enabled} do {
 		[2,"Checking Zeus Whitelist."] execVM "scripts\performance\log.sqf";
 		[] execvm "scripts\zeus\zeus_whitelist.sqf";
-		sleep 30;
+		sleep 300; // Check Zeus every 5 minutes.
 	};
 };
 // Update Zeus with all objects
@@ -51,8 +51,6 @@ execvm "scripts\zeus\player_ping.sqf";
 
 // Setting up Save Data for ALIVE
 [] spawn {
-	["3Para_Alive_Save",_value] call ALiVE_fnc_ProfileNameSpaceSave;
-	_value = "3Para_Alive_Save" call ALiVE_fnc_ProfileNameSpaceLoad;
 	waitUntil {
 		!isNil "ALiVE_SYS_DATA_SOURCE";
 	};
