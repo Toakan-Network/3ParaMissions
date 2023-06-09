@@ -39,4 +39,7 @@
 	};   
 };
 
+// Setup some Zeus things
+[player] call "scripts\zeus\player_ping.sqf";
+
 [2, "initPlayerLocal.sqf complete."] execvm "scripts\performance\log.sqf";

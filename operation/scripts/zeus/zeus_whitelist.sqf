@@ -27,10 +27,11 @@ private _zeus = [];
 		//	"Zeus_1" remoteExec ["endMission", _playerMachine];
 		//};
 
-		case ((_zeusSlot) && !(_uid in Trainers)):
+		case ((_zeusSlot) && (!(_uid in Trainers) && !(_uid in Zeus_IDs))):
 		{
-			[1, format ["Check 2 :: Player: %1 unauthorized player in Zeus slot.",_playerName], _filename] execvm "scripts\performance\log.sqf";
+			[1, format ["Check 2 :: Player: %1 unauthorized player in Zeus.",_playerName], _filename] execvm "scripts\performance\log.sqf";
 			unassignCurator _zeusModule;
+			
 			// "Zeus_Trainer" remoteExec ["endMission", _playerMachine];
 		};
 

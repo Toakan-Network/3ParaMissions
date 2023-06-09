@@ -44,10 +44,7 @@ missionNamespace setVariable ["zeus_updater", true];
 		} forEach allCurators;
 		sleep 120;
 	}
-}
-
-// Setup some Zeus things
-execvm "scripts\zeus\player_ping.sqf";
+};
 
 // Setting up Save Data for ALIVE
 [] spawn {

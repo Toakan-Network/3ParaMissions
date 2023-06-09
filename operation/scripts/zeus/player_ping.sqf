@@ -1,4 +1,6 @@
-player addEventHandler ["CuratorPinged", {
+private _player = _this select 0;
+
+_player addEventHandler ["CuratorPinged", {
 	params ["_curator", "_unit"];
 
 	private _pingTime = _unit getVariable ["zeusPingTime", 0];
