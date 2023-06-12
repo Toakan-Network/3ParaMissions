@@ -1,4 +1,8 @@
 private _player = _this select 0;
+private _filename = "zeus_ping";
+
+_player setVariable ["zeusPingTime", 0];
+_player setVariable ["zeusPingLimit", 0];
 
 _player addEventHandler ["CuratorPinged", {
 	params ["_curator", "_unit"];
@@ -34,3 +38,4 @@ _player addEventHandler ["CuratorPinged", {
 
 	[2, format ["[Zeus Ping] ping received from %1 (%2)", name _unit, getPlayerUID _unit]] execvm "scripts\performance\log.sqf";
 }];
+[3, format ["Script complete - %1", name _player], _filename] execvm "scripts\performance\log.sqf";  

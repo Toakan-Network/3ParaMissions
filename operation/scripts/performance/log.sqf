@@ -32,7 +32,7 @@ if (_errLevel == 0 || {isNil "_errLevel"} ) then {
     _errLevel = 1;
     };
 
-// if (_errLevel > LogLevel) exitwith {}; // for param use
+ if (_errLevel > LogLevel) exitwith {}; // for param use
 
 // Sets up the actual log event.
 _typex = "";

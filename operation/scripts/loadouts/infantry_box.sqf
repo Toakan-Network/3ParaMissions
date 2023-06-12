@@ -1,13 +1,13 @@
+// Testing new loadout apply system. Should be quicker than one item at a time.
 _box = _this select 0;
+private _loadoutFile = "scripts\loadouts\test\loadouts.sqf";
 
-_box addAction ["Section/Platoon Loadouts", "", [], 24, false, false, "", "", 5]; 
-_box addAction [" > Rifleman", "scripts\loadouts\infantry\rifleman.sqf", [], 23, false, false, "", "", 5]; 
-_box addAction [" > Rifleman Team Medic", "scripts\loadouts\infantry\riflemanteammedic.sqf", [], 22, false, false, "", "", 5]; 
-_box addAction [" > Rifleman NLAW", "scripts\loadouts\infantry\riflemannlaw.sqf", [], 21, false, false, "", "", 5]; 
-_box addAction [" > Rifleman ASM", "scripts\loadouts\infantry\riflemanasm.sqf", [], 20, false, false, "", "", 5];
-_box addAction [" > Grenadier", "scripts\loadouts\infantry\grenadier.sqf", [], 19, false, false, "", "", 5]; 
-_box addAction [" > Sharpshooter", "scripts\loadouts\infantry\sharpshooter.sqf", [], 18, false, false, "", "", 5];
-_box addAction [" > GPMG", "scripts\loadouts\infantry\gpmg.sqf", [], 17, false, false, "", "", 5];
-_box addAction [" > Pointman", "scripts\loadouts\infantry\pointman.sqf", [], 16, false, false, "", "", 5];
-_box addAction [" > Section IC/2IC", "scripts\loadouts\infantry\sectionic2ic.sqf", [], 15, false, false, "", "", 5];
-_box addAction [" > Training Rifleman", "scripts\loadouts\infantry\airsoft.sqf", [], 14, false, false, "", "", 5];
+_box addAction ["Infantry Loadouts", "", [], 20, false, false, "", "", 5]; 
+_box addAction [" > IC / 2IC", 		_loadoutFile, "ic", 9, false, false, "", "", 5]; 
+_box addAction [" > Rifleman", 		_loadoutFile, "rifleman", 8, false, false, "", "", 5]; 
+_box addAction [" > Team Medic", 	_loadoutFile, "teammedic", 7, false, false, "", "", 5]; 
+_box addAction [" > Sharpshooter", 	_loadoutFile, "sharpshooter", 6, false, false, "", "", 5]; 
+_box addAction [" > GPMG", 			_loadoutFile, "gpmg", 5, false, false, "", "", 5]; 
+_box addAction [" > Pointman", 		_loadoutFile, "pointman", 4, false, false, "", "", 5]; 
+_box addAction [" > Grenadier", 	_loadoutFile, "grenadier", 3, false, false, "", "", 5]; 
+_box addAction [" > Combat Medical Tech", 	_loadoutFile, "cmt", 1, false, false, "", "", 5]; 

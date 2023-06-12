@@ -23,7 +23,3 @@
     }];
 
 } foreach allCurators; //_zeus;
-
-
-
-

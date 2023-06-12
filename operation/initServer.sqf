@@ -6,6 +6,7 @@ private _filename = 'initServer.sqf';
 
 // Staff list
 StaffList = call compile preprocessFileLineNumbers "scripts\misc\admins.sqf";
+curators = createGroup sideLogic;
 
 // Slot reservation & whitelisting
 missionNamespace setVariable ["misionName", worldName];
@@ -13,6 +14,11 @@ missionNamespace setVariable ["zeus_whitelist_enabled",true];
 missionNamespace setVariable ["whitelist_enabled",true];
 missionNamespace setVariable ["perflogging", true];
 missionNamespace setVariable ["zeus_updater", true];
+missionNamespace setVariable ["LogLevel", 2];
+
+// Mission Event Handlers.
+[2, format ["Loading Mission Event Handlers."]] execvm "scripts\performance\log.sqf";
+0 = call compile preprocessFileLineNumbers "scripts\eh\mission_eh.sqf";
 
 [2, format ["Setting up Server performance loop."]] execvm "scripts\performance\log.sqf";
 //Enable performance logging
