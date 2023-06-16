@@ -146,17 +146,17 @@ switch _boxName do
 
 	case "lima": {
 		_boxType = "UK3CB_BAF_Box_L16_Ammo_HE";
-		_contents pushback ["UK3CB_BAF_1Rnd_81mm_Mo_Shells", 20, 20]; 
+		_contents pushback ["UK3CB_BAF_1Rnd_81mm_Mo_Shells", 15, 15]; 
 	};
 
 	case "mike": {
 		_boxType = "UK3CB_BAF_Box_L16_Ammo_HE";
-		_contents pushback ["UK3CB_BAF_1Rnd_81mm_Mo_Flare_White", 20, 20]; 
+		_contents pushback ["UK3CB_BAF_1Rnd_81mm_Mo_Flare_White", 15, 15]; 
 	};
 
 	case "november": {
 		_boxType = "UK3CB_BAF_Box_L16_Ammo_HE";
-		_contents pushback ["UK3CB_BAF_1Rnd_81mm_Mo_Smoke_White", 20, 20];
+		_contents pushback ["UK3CB_BAF_1Rnd_81mm_Mo_Smoke_White", 15, 15];
 	};
 
 	default {
