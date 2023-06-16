@@ -13,13 +13,13 @@ class Header
 	maxPlayers = 150;	// maximum number of players the mission supports
 };
 
-#include "includes\gcam_component.hpp"    // GCam Mods
+#include "includes\gcam_component.hpp"    	// GCam Mods
+#include "includes\fortify.hpp"				// Foritification Tools
 
 class CfgFunctions
 {	
   #include "functions\cfgfunctions.hpp"
 };
-
 
 class CfgSounds
 {
