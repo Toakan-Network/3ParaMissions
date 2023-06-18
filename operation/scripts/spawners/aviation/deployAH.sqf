@@ -6,29 +6,30 @@ switch (_map) do
 {
 	case "rof_mok": {
 		_posA = [9806.29,18948.9,0];
-		_vhcloc = [_posA, 0, 1, 5, 0, 0, 0] call bis_fnc_findsafepos;
+		_posA = [_posA, 0, 1, 5, 0, 0, 0] call bis_fnc_findsafepos;
 	};
 
 	case "Napf":{
 		_posA = [15056.148,16481.270,0];
-		_vhcloc = [_posA, 0, 1, 5, 0, 0, 0] call bis_fnc_findsafepos;
+		_posA = [_posA, 0, 1, 5, 0, 0, 0] call bis_fnc_findsafepos;
 		_dir = 50;
 	};
 
 	case "NapfWinter ":{
 		_posA = [15056.148,16481.270,0];
-		_vhcloc = [_posA, 0, 1, 5, 0, 0, 0] call bis_fnc_findsafepos;
+		_posA = [_posA, 0, 1, 5, 0, 0, 0] call bis_fnc_findsafepos;
 		_dir = 50;
 	};
 
 	case "blud_vidda":{
-		_vhcloc = getMarkerPos "aviation_spawn_ah";
+		_posA = getMarkerPos "aviation_spawn_ah";
 	};
 
 	default {false};
 };
 
 if (!isnil "_map") then {
+	_vhcloc = _posA;
 	_spawnVhc = createVehicle ["fza_ah64d_b2e", _vhcloc, [], 0, "NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
