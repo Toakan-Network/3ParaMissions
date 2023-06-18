@@ -9,5 +9,5 @@ class Zeus_Trainer
 {
 	title = "FAILURE";
 	subtitle = "You are not supposed to be here.";
-	description = "You have been removed the game as you are in the training team.";
+	description = "You have been removed the game as you are not in the training team.";
 };
