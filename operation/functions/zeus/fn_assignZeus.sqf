@@ -10,16 +10,16 @@ params [["_unit", objNull]];
 
 if (!isServer) exitWith {
     [
-        format ["tad_fnc_assignZeus executed on client '%1' for player '%2' with uid '%3'", clientOwner, (name _unit), (getPlayerUID _unit)],
+        format ["tcz_fnc_assignZeus executed on client '%1' for player '%2' with uid '%3'", clientOwner, (name _unit), (getPlayerUID _unit)],
         "ZEUS",
         true
-    ] remoteExec ["tad_fnc_log", 2];
+    ] remoteExec ["tcz_fnc_zlog", 2];
 };
 
 if (isNull _unit) exitWith {};
 
 if (!canSuspend) exitWith {
-    _this spawn tad_fnc_assignZeus;
+    _this spawn tcz_fnc_assignZeus;
 };
 
 private _uid = (getPlayerUID _unit);
@@ -66,27 +66,27 @@ if (_isZeus) then {
     if (_uid in InA_Server_coreStaffUIDs) then {
         _unit setVariable ["InA_isCoreStaff", true, true];
         _unit setVariable ["InA_isAdmin", true, true];
-        [(format ["Zeus (Core Staff) assigned to %1 (%2)", _name, _uid]), "ZEUS", false] call tad_fnc_log;
+        [(format ["Zeus (Core Staff) assigned to %1 (%2)", _name, _uid]), "ZEUS", false] call tcz_fnc_zlog;
     };
 
     if (_uid in InA_Server_staffUIDs) then {
         _unit setVariable ["InA_isAdmin", true, true];
-        [(format ["Zeus (Admin) assigned to %1 (%2)", _name, _uid]), "ZEUS", false] call tad_fnc_log;
+        [(format ["Zeus (Admin) assigned to %1 (%2)", _name, _uid]), "ZEUS", false] call tcz_fnc_zlog;
     };
 
     if (_uid in InA_Server_spartanUIDs) then {
-        [(format ["Zeus (Spartan) assigned to %1 (%2)", _name, _uid]), "ZEUS", false] call tad_fnc_log;
+        [(format ["Zeus (Spartan) assigned to %1 (%2)", _name, _uid]), "ZEUS", false] call tcz_fnc_zlog;
     };
 
     if (_moduleCreated) then {
-        [_zeusModule] call tad_fnc_updateEditableObjects;
+        [_zeusModule] call tcz_fnc_updateEditableObjects;
     };
 
-    _zeusModule remoteExec ["tad_fnc_curatorEHs", _unit];
+    _zeusModule remoteExec ["tcz_fnc_curatorEHs", _unit];
 
-    [_unit] remoteExec ["tad_fnc_zeusKeyBindEh", _unit];
-    [_unit] remoteExec ["tad_fnc_zeusToolsAddAction", _unit];
-    [_unit] call tad_fnc_addToAdminChannel;
+    [_unit] remoteExec ["tcz_fnc_zeusKeyBindEh", _unit];
+    [_unit] remoteExec ["tcz_fnc_zeusToolsAddAction", _unit];
+    [_unit] call tcz_fnc_addToAdminChannel;
 } else {
     private _isHost = ((owner _unit) == 2);
     private _isLogged = ((admin (owner _unit)) == 2);
@@ -98,7 +98,7 @@ if (_isZeus) then {
 
         deleteVehicle _module;
 
-        [(format ["Unassigned and removed Curator module for non Zeus player %1 (%2)", (name _unit), (getPlayerUID _unit)]), "ZEUS", true] call tad_fnc_log;
+        [(format ["Unassigned and removed Curator module for non Zeus player %1 (%2)", (name _unit), (getPlayerUID _unit)]), "ZEUS", true] call tcz_fnc_zlog;
     };
 
     _unit setVariable ["InA_isCoreStaff", false, true];

@@ -1,12 +1,11 @@
-class tad {
-    tag = "tad";
+class tcz {
+    tag = "tcz";
     class functions {
         file = "functions";
     };
 
     class misc {
         file = "functions\misc";
-        class log {}; // Zeus logging
     };
 
     class zeusFunctions {
@@ -15,6 +14,7 @@ class tad {
         class getEditableObjects {};
         class assignzeus {};
         class addToAdminChannel {};
+        class zlog {}; // Zeus logging
     };
 
 };

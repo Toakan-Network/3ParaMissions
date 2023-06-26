@@ -14,6 +14,8 @@
 private _errLevel = '';
 private _errMsg = '';
 private _errFile = '';
+private _logLevel = missionNamespace getvariable ["LogLevel", 2];
+
 
 if(_this isEqualType []) then
 {
@@ -32,7 +34,7 @@ if (_errLevel == 0 || {isNil "_errLevel"} ) then {
     _errLevel = 1;
     };
 
- if (_errLevel > LogLevel) exitwith {}; // for param use
+if (_errLevel > _logLevel) exitwith {}; // for param use
 
 // Sets up the actual log event.
 _typex = "";

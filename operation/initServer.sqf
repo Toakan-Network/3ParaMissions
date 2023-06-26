@@ -43,10 +43,10 @@ missionNamespace setVariable ["LogLevel", 2];
 [] spawn {
 	while {zeus_updater} do {
 		[2, format ["Updating Zeus Objects."]] execvm "scripts\performance\log.sqf";
-		private _objects = (call tad_fnc_getEditableObjects);
+		private _objects = (call tcz_fnc_getEditableObjects);
 
 		{
-			[_x, _objects] call tad_fnc_updateEditableObjects;
+			[_x, _objects] call tcz_fnc_updateEditableObjects;
 		} forEach allCurators;
 		sleep 120;
 	}

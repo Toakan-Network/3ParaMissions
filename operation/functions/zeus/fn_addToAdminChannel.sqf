@@ -11,7 +11,7 @@ private _scriptName = "addtoAdminChannel";
 
 if (!isServer) exitWith {};
 
-if (isRemoteExecuted && {!([remoteExecutedOwner] call tad_fnc_isZeus)}) exitWith {
+if (isRemoteExecuted && {!([remoteExecutedOwner] call tcz_fnc_isZeus)}) exitWith {
     private _caller = objNull;
     private _players = allPlayers;
 
@@ -22,7 +22,7 @@ if (isRemoteExecuted && {!([remoteExecutedOwner] call tad_fnc_isZeus)}) exitWith
     };
 
     private _msg = (format ["%1 :: Non Zeus player %2 (%3) tried to add themselves to the adminchannel!", _scriptName, (name _caller), (getPlayerUID _caller)]);
-    [_msg, "VIOLATION", true] call tad_fnc_log;
+    [_msg, "VIOLATION", true] call tcz_fnc_zlog;
 };
 
 private _channelInfo = (radioChannelInfo InA_Server_adminChannelID);

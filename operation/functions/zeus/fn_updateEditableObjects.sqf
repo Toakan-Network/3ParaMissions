@@ -13,7 +13,7 @@ params [
 if (!isServer) exitWith {};
 
 if (_objects isEqualTo []) then {
-    _objects append (call tad_fnc_getEditableObjects);
+    _objects append (call tcz_fnc_getEditableObjects);
 };
 
 private _curatorObjects = (curatorEditableObjects _curator);

@@ -18,7 +18,7 @@ if (_curatorObjPlacedEhIdx == -1) then {
         params ["_curator", "_entity"];
 
         if !(_entity isKindOf "Man") then {
-            [[_entity]] remoteExec ["tad_fnc_addToAllCurators", 2];
+            [[_entity]] remoteExec ["tcz_fnc_addToAllCurators", 2];
         };
     }];
 
@@ -32,7 +32,7 @@ private _curatorGrpPlacedEhIdx = (_module getVariable ["CuratorGrpPlacedEhIdx", 
 // Make sure the EH is added only once per module
 if (_curatorGrpPlacedEhIdx == -1) then {
     private _placedIdx = _module addEventHandler ["CuratorGroupPlaced", {
-        _this remoteExec ["tad_fnc_curatorGrpPlacedHandler", 2];
+        _this remoteExec ["tcz_fnc_curatorGrpPlacedHandler", 2];
     }];
 
     _module setVariable ["CuratorGrpPlacedEhIdx", _placedIdx];

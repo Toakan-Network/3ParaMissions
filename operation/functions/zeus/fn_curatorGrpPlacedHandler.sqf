@@ -1,7 +1,7 @@
 /*
  * Author: Whigital
  * Description:
- * Server components of tad_fnc_curatorGrpPlacedEh that does the HC
+ * Server components of tcz_fnc_curatorGrpPlacedEh that does the HC
  * checks and actual transfer
  *
  */
@@ -13,7 +13,7 @@ if (!isServer) exitWith {};
 if (isNull _group) exitWith {};
 
 // Add to all other curators
-[(units _group)] spawn tad_fnc_addToAllCurators;
+[(units _group)] spawn tcz_fnc_addToAllCurators;
 
 private _hcOnline = (InA_Server_HeadlessClients isNotEqualTo []);
 private _hcTransferEnabled = (!isNil "InA_Server_TransferZeusUnitsToHC" && {InA_Server_TransferZeusUnitsToHC});
@@ -29,4 +29,4 @@ _group setGroupIdGlobal [_rndGrpId];
 [_group] spawn derp_fnc_AISkill;
 
 // Transfer to HC if
-[_group] spawn tad_fnc_transferGroupHC;
+[_group] spawn tcz_fnc_transferGroupHC;
