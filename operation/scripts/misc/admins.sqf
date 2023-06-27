@@ -3,7 +3,12 @@ InA_Server_coreStaffUIDs = [
  "76561197991835568"  // Tad 
   //,"76561198263317224"  // Minstreal 
   ]; 
-InA_Server_staffUIDs = ["76561198191807158", "76561198286815321"]; 
+InA_Server_staffUIDs = [
+    "76561198191807158",  // Andy 
+    "76561198286815321",   // Spink
+    "76561198150743373",   // Jammin
+    "76561198139168151"     // Bjorn
+]; 
 
 Zeus_IDs = [
   "76561198353138828", // Aels
