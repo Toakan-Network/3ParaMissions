@@ -14,10 +14,10 @@ while {zeus_updater} do {
 
     _lastRun = serverTime;
 
-    private _objects = (call tad_fnc_getEditableObjects);
+    private _objects = (call tcz_fnc_getEditableObjects);
 
     {
-        [_x, _objects] call tad_fnc_updateEditableObjects;
+        [_x, _objects] call tcz_fnc_updateEditableObjects;
     } forEach allCurators;
 };
 
