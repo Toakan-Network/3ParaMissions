@@ -37,4 +37,4 @@ private _message = format ["ServerFPS: %1, DeadUnits: %2, AllUnits:%3, AllObject
     ,_countGroups  
     , _allPlayers]; 
 
-[_prefix,_message] execvm "scripts\performance\log.sqf";
+[3,_message, _prefix] execvm "scripts\performance\log.sqf";

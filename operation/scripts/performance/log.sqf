@@ -30,9 +30,10 @@ else {
   _errFile = "No File Specified";
 };
 
-if (_errLevel == 0 || {isNil "_errLevel"} ) then {
+
+if (isNil "_errLevel") then {
     _errLevel = 1;
-    };
+};
 
 if (_errLevel > _logLevel) exitwith {}; // for param use
 
