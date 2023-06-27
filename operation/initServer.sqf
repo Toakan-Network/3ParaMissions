@@ -23,9 +23,10 @@ missionNamespace setVariable ["LogLevel", 2];
 [2, format ["Setting up Server performance loop."]] execvm "scripts\performance\log.sqf";
 //Enable performance logging
 [] spawn {
+	private _perfScript = compileScript {"scripts\performance\logPerformance.sqf";};
 	while {perflogging} do
 		{
-			["[3Para] Performance Log."] execVM "scripts\performance\logPerformance.sqf";
+			call _perfScript;
 			sleep 30;
 		};
 };
@@ -33,12 +34,14 @@ missionNamespace setVariable ["LogLevel", 2];
 [2, format ["Setting up Server Zeus loops."]] execvm "scripts\performance\log.sqf";
 // Enable Zeus checking
 [] spawn {
+	private _zeusWhiteScript = compileScript {"scripts\zeus\zeus_whitelist.sqf"};
 	while {zeus_whitelist_enabled} do {
 		[2,"Checking Zeus Whitelist."] execVM "scripts\performance\log.sqf";
-		[] execvm "scripts\zeus\zeus_whitelist.sqf";
+		call _zeusWhiteScript;
 		sleep 300; // Check Zeus every 5 minutes.
 	};
 };
+
 // Update Zeus with all objects
 [] spawn {
 	while {zeus_updater} do {

@@ -1,10 +1,12 @@
 private _scriptname = "Performance";
+private _prefix = "[3Para] Performance Log.";
+
 private _countGroups = 0;  
 private _allPlayers = count(call BIS_fnc_listPlayers); 
 private _countWest = 0;
 private _countEnemy = 0; 
 private _countCiv = 0;  
- 
+
 { 
  _countGroups = _countGroups + 1; 
  switch(side _x) do { 
@@ -35,4 +37,4 @@ private _message = format ["ServerFPS: %1, DeadUnits: %2, AllUnits:%3, AllObject
     ,_countGroups  
     , _allPlayers]; 
 
-[2,_message] execvm "scripts\performance\log.sqf";
+[_prefix,_message] execvm "scripts\performance\log.sqf";

@@ -1,3 +1,4 @@
+private _filename = "mission_eh.sqf";
 
 addMissionEventHandler ["PlayerConnected", {
 	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
@@ -27,3 +28,4 @@ addMissionEventHandler ["PlayerConnected", {
 		player call compile preprocessFileLineNumbers "scripts\zeus\zeus_events.sqf";
 	};
 }];
+[3, format ["Script complete - %1", _filename], _filename] execvm "scripts\performance\log.sqf";  

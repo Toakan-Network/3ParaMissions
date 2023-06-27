@@ -21,4 +21,4 @@ _player addEventHandler ["Killed", {
 	};
 
 }];
-[3, format ["Script complete - %1", name _player], _filename] execvm "scripts\performance\log.sqf";  
+[3, format ["Script complete - %1 for %2.",_filename,  name _player], _filename] execvm "scripts\performance\log.sqf";  
