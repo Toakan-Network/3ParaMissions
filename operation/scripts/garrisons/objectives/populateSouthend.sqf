@@ -81,10 +81,10 @@ switch (true) do {
 
 		// Section spawn
 		for "_i" from 1 to _eSections do {
-			private _unitpos = [_townLoc, 100, 600, 0, 0, 0.1, 0] call BIS_fnc_findSafePos;
+			private _unitpos = [_townLoc, 200, 1100, 0, 0, 0.1, 0] call BIS_fnc_findSafePos;
 			_grp = [_townLoc, east, selectrandom _eSectionOptions, [], [], [0.3, 0.4]] call BIS_fnc_spawnGroup; 
 			_grp setBehaviourStrong "COMBAT";
-			[_grp, _townLoc, 700] call BIS_fnc_taskPatrol;
+			[_grp, _townLoc, 800] call BIS_fnc_taskPatrol;
 			_grp enableDynamicSimulation true; 
 			{
 				_x setSkill ["AimingAccuracy",0.35];
@@ -96,15 +96,14 @@ switch (true) do {
 
 		// Vehicle spawn
 		for "_i" from 1 to _eTechnicals do {
-			private _vehPos = [_townLoc, 5, 600, 0, 0, 0.1, 0] call BIS_fnc_findSafePos;
-			diag_log format ["Vehicle Pos : %1", _vehPos];
+			private _vehPos = [_townLoc, 200, 1100, 0, 0, 0.1, 0] call BIS_fnc_findSafePos;
 			_vehicle = createVehicle [selectrandom _eTechnicalOptions, _vehPos];
 			_vehicle setdir 0;
 			_vehicle setFuel 0.5; 
-			[group _vehicle, _townLoc, 500] call BIS_fnc_taskPatrol;
 			_vehicle enableDynamicSimulation true; 
 			_spawnedUnits pushback _vehicle;
 			createVehicleCrew _vehicle;
+			[group (driver _vehicle), _townLoc, 500] call BIS_fnc_taskPatrol;
 			{
 				_spawnedUnits pushback _x;
 				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 30; deleteVehicle _this}}];
@@ -114,13 +113,12 @@ switch (true) do {
 
 		for "_i" from 1 to _earmour do {
 			private _vehPos = [_townLoc, 5, 600, 0, 0, 0.1, 0] call BIS_fnc_findSafePos;
-			diag_log format ["Vehicle Pos : %1", _vehPos];
 			_vehicle = createVehicle [selectrandom _eArmourOptions, _vehPos];
 			_vehicle setdir 0;
 			_vehicle setFuel 0.5; 
-			[group _vehicle, _townLoc, 500] call BIS_fnc_taskPatrol;
 			_vehicle enableDynamicSimulation true; 
 			_spawnedUnits pushback _vehicle;
+			[group (driver _vehicle), _townLoc, 200] call BIS_fnc_taskPatrol;
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
@@ -132,16 +130,14 @@ switch (true) do {
 		
 	};
 };
-diag_log format ["Unit list: %1", _spawnedUnits];
+
 // Spawn cleanup script
 [_townLoc,_spawnedUnits] spawn {
 	params ["_townLoc", "_spawnedUnits"];
 	private _isrunning = missionnamespace getvariable ["SouthendAttack", 0];
-	diag_log format ["Unit list passed: %1", _spawnedUnits];
 	waitUntil {
 		sleep 10;
 		private _nearby = nearestobjects [_townLoc,["Man"],1000];
-		diag_log format ["Running Check on Active AO"];
 		{
 			// Remove Players from the checks
 			if ((side _x == west) || (side _x == independent)) then {
@@ -153,7 +149,6 @@ diag_log format ["Unit list: %1", _spawnedUnits];
 				_spawnedUnits = _spawnedUnits - [_x];
 			};
 		} foreach _nearby;
-		diag_log format ["Found units: %1", _nearby];
 		if (count _nearby == 0) then {
 				true;
 			} else {
@@ -165,7 +160,6 @@ diag_log format ["Unit list: %1", _spawnedUnits];
 		["C_Southend", "SUCCEEDED"] call BIS_fnc_taskSetState;
 		missionNamespace setVariable ["SouthendAttack", 0];
 		deleteMarker "SouthendAttack";
-		diag_log format ["Unit list passed: %1", _spawnedUnits];
 		sleep 5;
 		["C_Southend"] call BIS_fnc_deleteTask;
 	};
