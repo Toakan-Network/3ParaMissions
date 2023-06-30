@@ -3,7 +3,7 @@ private _filename = "acre_eh.sqf";
 
 // Player AND Acre check, no point setting if server / HC or if users aren't using ACRE.
 if (hasInterface AND (isClass (configFile >> "CfgPatches" >> "acre_main"))) then {
-	[2, format ["Enabling ACRE for player %1", name _player]] execvm "scripts\performance\log.sqf";
+	[3, format ["Enabling ACRE for player %1", name _player], _filename] execvm "scripts\performance\log.sqf";
 	// Enable Babel
 	[true, true] call acre_api_fnc_setupMission;
 
