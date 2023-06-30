@@ -10,12 +10,20 @@ ao_marker_fibua
 ao_marker_hq
 
 Usage:
-[null, player, null, ["ao_marker_fiwaf",3]] execvm "scripts\garrisons\objectives\populate.sqf"
+[null, player, null, ["Markername", 3, "Objective Name"]] execvm "scripts\garrisons\objectives\populate.sqf"
 */
 
 params ["_target", "_caller", "_actionId", "_arguments"];
+private _objName = '';
 _markername = _this select 3 select 0;
 _difficulty = _this select 3 select 1;
+[2,format ["Spawning AO: %1", _markername]] execvm "scripts\performance\log.sqf"; 
+if (count (_this select 3) > 2) then{
+	private _objName = _this select 3 select 2;
+	[2,format ["Objective: %1", _objName]] execvm "scripts\performance\log.sqf"; 
+} ;
+
+[2,format ["Spawning AO: %1", _markername]] execvm "scripts\performance\log.sqf"; 
 
 private _priorrun = missionnamespace getvariable ["AOOnline", 0];
 private _townLoc = getMarkerPos _markername;
@@ -84,13 +92,24 @@ switch (_markername) do {
 		_difficultyModifier = 1.5;
 	};
 
-	default { // ao_marker_hq
+	case ("ao_marker_hq"): {
 		missionNamespace setVariable ["AOOnline", 1];
 		missionNamespace setVariable [_markername, 1];
 		_markerX = 800;
 		_markerY = 800;
 		_taskID = 'AO_HQ_Defence';
 		_taskTitle = 'ITC HQ Defence';
+		_taskDesc = '';
+		_difficultyModifier = 1;
+	};
+
+	default { // ao_marker_hq
+		missionNamespace setVariable ["AOOnline", 1];
+		missionNamespace setVariable [_markername, 1];
+		_markerX = 800;
+		_markerY = 800;
+		_taskID = 'AO_Defence';
+		_taskTitle = _objName;
 		_taskDesc = '';
 		_difficultyModifier = 1;
 	};
@@ -123,7 +142,7 @@ switch (true) do {
 		_eAirAsset = 1;
 	};
 
-	case (_playerCount > 8 AND _playerCount <17): {
+	case (_playerCount > 7 AND _playerCount <17): {
 		_eSections = 6;
 		_eTechnicals = 4;
 		_earmour = 2;

@@ -21,5 +21,6 @@ private _filename = "initplayerlocal.sqf";
 // Setup player Event Handlers;
 [player] execvm "scripts\eh\player_eh.sqf";
 [player] execvm "scripts\eh\zeus_ping.sqf";
+[player] execvm "scripts\eh\acre.sqf";
 
 [2, "initPlayerLocal.sqf complete."] execvm "scripts\performance\log.sqf";
