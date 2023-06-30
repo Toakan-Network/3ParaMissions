@@ -35,6 +35,11 @@ force acex_field_rations_timeWithoutFood = 2;
 force acex_field_rations_timeWithoutWater = 2;
 ```
 
+To Import Settings
+- Grab the Settings from /mission-settings/cba_settings-x.ext.
+- Rename to cba_settings.sqf
+- Put in the Root of the mission file.
+
 ## Modlist 
 The modlist contains the list of mods which the mission files will all need to be developed using. 
 ### DO NOT ADD THE QOL MODS WHEN EDITING MISSION FILES
