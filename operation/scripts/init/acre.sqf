@@ -1,3 +1,12 @@
+// Created by Tad, SteamID: 76561197991835568
+// Easy way to build radio presets. Provide what you want into the _nets array and let it go to work.
+//
+// Usage: 
+// Change _nets array here to list whatever Channels you want to use.
+// In Init.sqf use: call "scripts\init\acre.sqf";
+// In initPlayerLocal.sqf use: [] execvm "scripts\init\acre.sqf";
+//
+//
 // Acre check, no point setting if server / HC or if users aren't using ACRE.
 if (isClass (configFile >> "CfgPatches" >> "acre_main")) then {
 	[2, "Setting up Acre Channels."] execvm "scripts\performance\log.sqf";
