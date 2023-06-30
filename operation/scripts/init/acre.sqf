@@ -29,6 +29,6 @@ if (isClass (configFile >> "CfgPatches" >> "acre_main")) then {
 			};
 			[_radio, _presetName, _channelID +1, _set, _net] call acre_api_fnc_setPresetChannelField;
 		} foreach _nets;
-		[_x, _presetName] call acre_api_fnc_setPreset;
+		[_radio, _presetName] call acre_api_fnc_setPreset;
 	} foreach _radios;
 };
