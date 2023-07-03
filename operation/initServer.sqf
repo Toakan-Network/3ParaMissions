@@ -82,6 +82,6 @@ if (_map isNotEqualTo _trainingmap) then {
 	};
 };
 
-[] execvm "scripts\init\acre.sqf";
+[] execvm "scripts\init\acre_setup.sqf";
 
 [2, format ["initServer Completed for map:%1", worldName]] execvm "scripts\performance\log.sqf";

@@ -19,9 +19,8 @@ private _filename = "initplayerlocal.sqf";
 };
 
 // Setup player Event Handlers;
-[player] execvm "scripts\eh\player_eh.sqf";
-[player] execvm "scripts\eh\zeus_ping.sqf";
-[player] execvm "scripts\eh\acre_eh.sqf";
-[] execvm "scripts\init\acre.sqf";
+[player] execvm "scripts\eh\player_eh.sqf";		// Player EH
+[player] execvm "scripts\eh\zeus_ping.sqf";		// Zeus Ping EH
+[player] execvm "scripts\init\acre_setup.sqf"; 	// ACRE Things
 
 [2, "initPlayerLocal.sqf complete."] execvm "scripts\performance\log.sqf";
