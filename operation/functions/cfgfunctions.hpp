@@ -27,6 +27,12 @@ class tcz {
         class skeet {};
     };
 
+    class tp {
+        file = "functions\tp";
+        class rtb {};       // Return to Base
+        class rtp {};       // Random TelePort
+    };
+
     class zeusFunctions {
         file = "functions\zeus";
         class updateEditableObjects {};
