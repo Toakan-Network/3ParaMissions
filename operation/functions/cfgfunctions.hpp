@@ -10,6 +10,13 @@ class tcz {
         file = "functions";
     };
 
+    class acre {
+        file = "functions\acre";
+        class acre_setup {};
+        class acre_channels {};
+        class acre_babel {};
+    };
+
     class log {
         file = "functions\log";
         class log {};
@@ -17,6 +24,7 @@ class tcz {
 
     class misc {
         file = "functions\misc";
+        class skeet {};
     };
 
     class zeusFunctions {

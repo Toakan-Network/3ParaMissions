@@ -1,5 +1,5 @@
 private _player = _this select 0;
-private _filename = "acre_babel.sqf";
+private _filename = "fn_acre_babel.sqf";
 
 // Enable Babel
 [true, true] call acre_api_fnc_setupMission;

@@ -4,7 +4,7 @@ if (!isServer) exitWith {};
 private _interval = 120;
 private _lastRun = serverTime;
 
-[2, format ["Zeus Updater loop starting."]] execvm "scripts\performance\log.sqf";
+[2, format ["Zeus Updater loop starting."]] call tcz_fnc_log;
 
 while {zeus_updater} do {
     if (serverTime < (_lastRun + _interval)) then {
@@ -21,4 +21,4 @@ while {zeus_updater} do {
     } forEach allCurators;
 };
 
-[2, format ["Zeus Updater loop stopped."]] execvm "scripts\performance\log.sqf";
+[2, format ["Zeus Updater loop stopped."]] call tcz_fnc_log;

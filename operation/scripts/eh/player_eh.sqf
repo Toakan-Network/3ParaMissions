@@ -20,4 +20,4 @@ _player addEventHandler ["Killed", {
 		[2, _msg] remoteexec ["tcz_fnc_log", 2];  
 	};
 }];
-[3, format ["Script complete - %1 for %2.",_filename,  name _player], _filename] execvm "scripts\performance\log.sqf";  
+[3, format ["Script complete - %1 for %2.",_filename,  name _player], _filename] call tcz_fnc_log;  

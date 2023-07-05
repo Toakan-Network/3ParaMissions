@@ -17,10 +17,10 @@ missionNamespace setVariable ["zeus_updater", true];
 missionNamespace setVariable ["LogLevel", 2];
 
 // Mission Event Handlers.
-[2, format ["Loading Mission Event Handlers."]] execvm "scripts\performance\log.sqf";
+[2, format ["Loading Mission Event Handlers."]] call tcz_fnc_log;
 0 = call compile preprocessFileLineNumbers "scripts\eh\mission_eh.sqf";
 
-[2, format ["Setting up Server performance loop."]] execvm "scripts\performance\log.sqf";
+[2, format ["Setting up Server performance loop."]] call tcz_fnc_log;
 //Enable performance logging
 [] spawn {
 	private _perfScript = compileScript ["scripts\performance\logPerformance.sqf"];
@@ -31,12 +31,12 @@ missionNamespace setVariable ["LogLevel", 2];
 		};
 };
 
-[2, format ["Setting up Server Zeus loops."]] execvm "scripts\performance\log.sqf";
+[2, format ["Setting up Server Zeus loops."]] call tcz_fnc_log;
 // Enable Zeus checking
 [] spawn {
 	private _zeusWhiteScript = compileScript ["scripts\zeus\zeus_whitelist.sqf"];
 	while {zeus_whitelist_enabled} do {
-		[2,"Checking Zeus Whitelist."] execVM "scripts\performance\log.sqf";
+		[2,"Checking Zeus Whitelist."] call tcz_fnc_log;
 		call _zeusWhiteScript;
 		sleep 300; // Check Zeus every 5 minutes.
 	};
@@ -45,7 +45,7 @@ missionNamespace setVariable ["LogLevel", 2];
 // Update Zeus with all objects
 [] spawn {
 	while {zeus_updater} do {
-		[2, format ["Updating Zeus Objects."]] execvm "scripts\performance\log.sqf";
+		[2, format ["Updating Zeus Objects."]] call tcz_fnc_log;
 		private _objects = (call tcz_fnc_getEditableObjects);
 
 		{
@@ -72,7 +72,7 @@ missionNamespace setVariable ["LogLevel", 2];
 private _map = worldname;
 private _trainingmap = "rof_mok";
 if (_map isEqualTo _trainingmap) then {
-	[2, format["Applying settings for %1", _map]] execvm "scripts\performance\log.sqf";
+	[2, format["Applying settings for %1", _map]] call tcz_fnc_log;
 	
 	// initialise common variable for rifle range script
 	[] spawn RR_fnc_initCommon;
@@ -90,13 +90,13 @@ if (_map isNotEqualTo _trainingmap) then {
 			!isNil "ALiVE_SYS_DATA_SOURCE";
 		};
 		if (ALiVE_SYS_DATA_SOURCE isEqualTo "pns") then {
-			[2, format ["Setting up ALIVE autosave."]] execvm "scripts\performance\log.sqf";
+			[2, format ["Setting up ALIVE autosave."]] call tcz_fnc_log;
 			900 call ALiVE_fnc_AutoSave_PNS;
 		};
 	};
 };
 
-[] execvm "scripts\init\acre_setup.sqf";
+0 = call tcz_fnc_acre_setup; 
 0 = call tcz_fnc_createAdminChannel;
 
-[2, format ["initServer Completed for map:%1", worldName]] execvm "scripts\performance\log.sqf";
+[2, format ["initServer Completed for map:%1", worldName]] call tcz_fnc_log;

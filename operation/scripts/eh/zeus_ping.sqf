@@ -36,6 +36,6 @@ _player addEventHandler ["CuratorPinged", {
 		};
 	};
 
-	[2, format ["[Zeus Ping] ping received from %1 (%2)", name _unit, getPlayerUID _unit]] execvm "scripts\performance\log.sqf";
+	[2, format ["[Zeus Ping] ping received from %1 (%2)", name _unit, getPlayerUID _unit]] call tcz_fnc_log;
 }];
-[3, format ["Script complete - %1", name _player], _filename] execvm "scripts\performance\log.sqf";  
+[3, format ["Script complete - %1", name _player], _filename] call tcz_fnc_log;  

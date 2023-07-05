@@ -23,5 +23,5 @@ params [
 
 private _message = format ["[%1] %2", (toUpper _Filename), _msg];
 
-[2, _message] execvm "scripts\performance\log.sqf";
+[2, _message] call tcz_fnc_log;
 

@@ -17,13 +17,13 @@ params ["_target", "_caller", "_actionId", "_arguments"];
 private _objName = '';
 _markername = _this select 3 select 0;
 _difficulty = _this select 3 select 1;
-[2,format ["Spawning AO: %1", _markername]] execvm "scripts\performance\log.sqf"; 
+[2,format ["Spawning AO: %1", _markername]] call tcz_fnc_log; 
 if (count (_this select 3) > 2) then{
 	private _objName = _this select 3 select 2;
-	[2,format ["Objective: %1", _objName]] execvm "scripts\performance\log.sqf"; 
+	[2,format ["Objective: %1", _objName]] call tcz_fnc_log; 
 } ;
 
-[2,format ["Spawning AO: %1", _markername]] execvm "scripts\performance\log.sqf"; 
+[2,format ["Spawning AO: %1", _markername]] call tcz_fnc_log; 
 
 private _priorrun = missionnamespace getvariable ["AOOnline", 0];
 private _townLoc = getMarkerPos _markername;
@@ -31,11 +31,11 @@ private _difficultyModifier = 0;
 
 // Sanity Check, is AO already running?
 if (_priorrun isEqualTo 1) exitwith {
-	[1, format ["Area of Operations already declared."]] execvm "scripts\performance\log.sqf";
+	[1, format ["Area of Operations already declared."]] call tcz_fnc_log;
 };
 
 if (_townloc isEqualTo []) exitwith {
-	[1, format ["Error trying to determine town location"]] execvm "scripts\performance\log.sqf";
+	[1, format ["Error trying to determine town location"]] call tcz_fnc_log;
 };
 
 private _markerX = 0;
