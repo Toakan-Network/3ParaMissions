@@ -22,5 +22,6 @@ private _filename = "initplayerlocal.sqf";
 [player] execvm "scripts\eh\player_eh.sqf";		// Player EH
 [player] execvm "scripts\eh\zeus_ping.sqf";		// Zeus Ping EH
 [player] execvm "scripts\init\acre_setup.sqf"; 	// ACRE Things
+[player] call tcz_fnc_addAdminChannel;	// Add to Admin Channel
 
 [2, "initPlayerLocal.sqf complete."] execvm "scripts\performance\log.sqf";

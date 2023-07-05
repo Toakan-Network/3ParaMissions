@@ -55,6 +55,20 @@ missionNamespace setVariable ["LogLevel", 2];
 	}
 };
 
+// Discord loop
+[] spawn {
+		sleep 60;
+		[
+		// ["task",value]
+		["UpdateDetails",	servername],
+		["UpdateState",format ["Training in The Land Warfare Centre."]],
+		["UpdateSmallImageKey","3para"],
+		["UpdatePartySize",count playableUnits],
+		["UpdatePartyMax",getNumber(missionConfigFile >> "Header" >> "maxPlayers")],
+		["UpdateButtons",["Arma 3","https://3para.pro.unitcommander.co.uk/"]]
+		] call (missionNameSpace getVariable ["DiscordRichPresence_fnc_update",{}]);
+};
+
 private _map = worldname;
 private _trainingmap = "rof_mok";
 if (_map isEqualTo _trainingmap) then {
@@ -83,5 +97,6 @@ if (_map isNotEqualTo _trainingmap) then {
 };
 
 [] execvm "scripts\init\acre_setup.sqf";
+0 = call tcz_fnc_createAdminChannel;
 
 [2, format ["initServer Completed for map:%1", worldName]] execvm "scripts\performance\log.sqf";
