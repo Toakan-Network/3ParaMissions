@@ -16,8 +16,6 @@ class Header
 #include "includes\gcam_component.hpp"    	// GCam Mods
 #include "includes\fortify.hpp"				// Foritification Tools
 #include "includes\discord.hpp"				// Discord Integration.
-#include "includes\acre_vehicles.hpp"		// ACRE Pre-defined racks
-
 
 class CfgFunctions
 {	
