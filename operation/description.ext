@@ -2,9 +2,9 @@ author			= "3PARA";
 onLoadName	= "Pre-Deployment Training";
 onLoadMission = "After a long and tiring operation, 3rd Battalion, The Parachute Regiment is gearing up for a new campaign.";
 loadScreen = "textures\fenrir.paa";
-
 respawnOnStart = 0;
 disabledAI = 1;
+#include "includes\channel_settings.hpp"	// Channel Settings.
 
 class Header
 {
@@ -15,6 +15,9 @@ class Header
 
 #include "includes\gcam_component.hpp"    	// GCam Mods
 #include "includes\fortify.hpp"				// Foritification Tools
+#include "includes\discord.hpp"				// Discord Integration.
+#include "includes\acre_vehicles.hpp"		// ACRE Pre-defined racks
+
 
 class CfgFunctions
 {	
