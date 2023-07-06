@@ -1,21 +1,14 @@
 private _filename = "initplayerlocal.sqf";
 [2, "initPlayerLocal.sqf started."] call tcz_fnc_log;
 
-// Dynamic Zeus Module.
-[player, _filename] spawn {
-	private _filename = _this select 1;
-	[3, format ["Checking for Zeus logins"], _filename] call tcz_fnc_log;   
-	[player] execvm "scripts\zeus\zeus_init.sqf";
-};
+[player] call tcz_fnc_gcamSetup;
 
-[player, _filename] spawn {   
-	private _player = _this select 0;
-	private _filename = _this select 1;
-	if ((getplayerUID _player in GCam_Users) || (getplayerUID _player in ServerAdmins)) then {   
-		[3, format ["%1 is J9 Media, giving access to GCam.", name _player], _filename] call tcz_fnc_log;   
-		_startGcam = ["gcam", "GCam", "", {execVM "scripts\gcam\gcam.sqf"}, {true}] call ace_interact_menu_fnc_createAction;   
-		[(typeOf _player), 1, ["ACE_SelfActions"], _startGcam] call ace_interact_menu_fnc_addActionToClass;   
-	};   
+// Zeus Handler
+[player] spawn {
+	params ["_player"];
+	waituntil {(!(isNull (getAssignedCuratorLogic _player)))};
+	private _curator = getAssignedCuratorLogic _player;
+	[_player, _curator] call tcz_fnc_playerZeusLogging;
 };
 
 // Setup player Event Handlers;

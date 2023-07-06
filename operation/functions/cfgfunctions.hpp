@@ -6,6 +6,12 @@ class tcz {
         class createAdminChannel {};
         class addAdminChannel {};
     };
+
+    class eventHandles {
+        file = "functions\eh";
+        class playerZeusLogging {};
+    }
+
     class functions {
         file = "functions";
     };
@@ -25,6 +31,7 @@ class tcz {
     class misc {
         file = "functions\misc";
         class skeet {};
+        class gcamSetup {};
     };
 
     class tp {

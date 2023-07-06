@@ -6,9 +6,7 @@
  */
 
 params [["_module", objNull]];
-
 if (isNull _module) exitWith {};
-
 
 // Object placed
 private _curatorObjPlacedEhIdx = (_module getVariable ["CuratorObjPlacedEhIdx", -1]);
@@ -25,7 +23,6 @@ if (_curatorObjPlacedEhIdx == -1) then {
      _module setVariable ["CuratorObjPlacedEhIdx", _placedIdx];
 };
 
-
 // Group placed
 private _curatorGrpPlacedEhIdx = (_module getVariable ["CuratorGrpPlacedEhIdx", -1]);
 
@@ -37,7 +34,6 @@ if (_curatorGrpPlacedEhIdx == -1) then {
 
     _module setVariable ["CuratorGrpPlacedEhIdx", _placedIdx];
 };
-
 
 // Marker placed
 private _curatorMarkerPlacedEhIdx = (_module getVariable ["CuratorMarkerPlacedEhIdx", -1]);
@@ -57,7 +53,6 @@ if (_curatorMarkerPlacedEhIdx == -1) then {
     _module setVariable ["CuratorMarkerPlacedEhIdx", _placedIdx];
 };
 
-
 // Marker deleted
 private _curatorMarkerDeletedEhIdx = (_module getVariable ["CuratorMarkerDeletedEhIdx", -1]);
 
@@ -74,6 +69,5 @@ if (_curatorMarkerDeletedEhIdx == -1) then {
             _curator setVariable ["PlacedCuratorMarkers", _markers, true];
         }
     }];
-
     _module setVariable ["CuratorMarkerDeletedEhIdx", _deletedIdx];
 };
