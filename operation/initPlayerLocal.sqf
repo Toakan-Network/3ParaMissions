@@ -1,4 +1,3 @@
-private _filename = "initplayerlocal.sqf";
 [2, "initPlayerLocal.sqf started."] call tcz_fnc_log;
 
 [player] call tcz_fnc_gcamSetup;
@@ -6,7 +5,9 @@ private _filename = "initplayerlocal.sqf";
 // Zeus Handler
 [player] spawn {
 	params ["_player"];
-	waituntil {(!(isNull (getAssignedCuratorLogic _player)))};
+	waituntil {
+		(!(isNull (getAssignedCuratorLogic _player)))
+	};
 	private _curator = getAssignedCuratorLogic _player;
 	[_player, _curator] call tcz_fnc_playerZeusLogging;
 };
