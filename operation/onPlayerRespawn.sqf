@@ -1,7 +1,7 @@
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 
 if (hasInterface AND (isClass (configFile >> "CfgPatches" >> "acre_main"))) then {
-	[_newUnit] call tcz_fnc_acre_channels;
+	0 = call compile preprocessFileLineNumbers "scripts\init\acre\acre_channels.sqf";
 };
 
-[_newUnit] call tcz_fnc_addAdminChannel;
+0 = call tcz_fnc_addAdminChannel;
