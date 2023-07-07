@@ -16,6 +16,6 @@ if (!isnil "_map") then {
 	_spawnVhc setDir 165;
 	_spawnVhc enableDynamicSimulation true;
 	[_spawnVhc,["Blu_Woodland",1], true	] call BIS_fnc_initVehicle;
-
+	[_spawnVhc] call tcz_fnc_vehiclecamonets;
 };
 

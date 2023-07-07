@@ -34,6 +34,12 @@ class tcz {
         class gcamSetup {};
     };
 
+    class tools {
+        file = "functions\tools";
+        class vehicleCamoNets {};
+        class objectCreation {};
+    };
+
     class tp {
         file = "functions\tp";
         class rtb {};       // Return to Base
