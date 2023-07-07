@@ -208,7 +208,7 @@ switch (true) do {
 			_grp enableDynamicSimulation true; 
 			{
 				_x setSkill ["AimingAccuracy", round(0.15 * (_playerCount / 100))];
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach units _grp;
 
 			_spawnedUnits pushback _grp;
@@ -226,9 +226,9 @@ switch (true) do {
 			[group (driver _vehicle), _townLoc, 500] call BIS_fnc_taskPatrol;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 		
 		// _eArmour
@@ -243,9 +243,9 @@ switch (true) do {
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 
 		// _eAAMobile
@@ -259,9 +259,9 @@ switch (true) do {
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 
 		// _eAAStatic
@@ -275,9 +275,9 @@ switch (true) do {
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 
 		// _eAirAsset
@@ -290,9 +290,9 @@ switch (true) do {
 			[group (driver _vehicle), _townLoc, 200] call BIS_fnc_taskPatrol;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 
 		// _eSFAssets
@@ -304,7 +304,7 @@ switch (true) do {
 			_grp enableDynamicSimulation true; 
 			{
 				_x setSkill ["AimingAccuracy", round(0.15 * (_playerCount / 100))];
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach units _grp;
 
 			_spawnedUnits pushback _grp;

@@ -24,6 +24,6 @@ if (!isnil "_map") then {
 	_spawnVhc = createVehicle ["UK3CB_BAF_Wildcat_AH1_TRN_8A", _vhcloc, [], 0, "NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

@@ -27,6 +27,6 @@ if (!isnil "_map") then {
 	_spawnVhc = createVehicle ["FIR_F35B_RAF02", _vhcloc, [], 0, "NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

@@ -28,6 +28,6 @@ if (!isnil "_map") then {
 	_spawnVhc = createVehicle ["B_A400M_UK_CAMO_F", _vhcloc, [], 0, "NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

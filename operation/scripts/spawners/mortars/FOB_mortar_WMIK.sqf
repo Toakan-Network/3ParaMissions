@@ -29,7 +29,8 @@ if (!isnil "_map") then {
 		_spawnVhc setDir _dir;
 		_spawnVhc enableDynamicSimulation true;
 		[_spawnVhc,["Green",1], ["ClanLogo_Hide",1,"AerialAtuL_Hide",1,"AerialAtuR_Hide",1,"AerialFL_Hide",1,"AerialFR_Hide",1,"AirIntakeSnorkel_Hide",0,"Flag_Hide",0,"Mudguards_Hide",1,"Radio_Hide",1,"SideLockers_Hide",0]	] call BIS_fnc_initVehicle;
-
+		[_spawnVhc] call tcz_fnc_objectCreation;
+		
 		//_spawnVhc = createVehicle ["UK3CB_BAF_LandRover_WMIK_GMG_Green_A", _posA,[],0,"NONE"];
 		//_spawnVhc setDir _dir;
 		//_spawnVhc enableDynamicSimulation true;

@@ -12,6 +12,7 @@ _curator addEventHandler ["CuratorObjectPlaced", {
 	params ["_curator", "_entity"];
 	private _scriptName = "fn_playerZeusLogging";
 	private _message = format ["%1 has placed: %2", profileName, _entity];
+	[_entity] call tcz_fnc_objectCreation;
 	[3,_message, _scriptName] call tcz_fnc_log;
 }];
 

@@ -17,5 +17,6 @@ if (!isnil "_map") then {
 	_spawnVhc enableDynamicSimulation true;
 	[_spawnVhc,["Green",1], ["ClanLogo_Hide",1,"AerialAtuL_Hide",1,"AerialAtuR_Hide",1,"AerialFL_Hide",1,"AerialFR_Hide",1,"AirIntakeSnorkel_Hide",0,"Flag_Hide",0,"Mudguards_Hide",1,"Radio_Hide",1,"SideLockers_Hide",0]	] call BIS_fnc_initVehicle;
 	[_spawnVhc] call tcz_fnc_vehiclecamonets;
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

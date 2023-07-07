@@ -147,7 +147,7 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			_grp enableDynamicSimulation true; 
 			{
 				_x setSkill ["AimingAccuracy", round(0.15 * (_playerCount / 100))];
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach units _grp;
 
 			_spawnedUnits pushback _grp;
@@ -167,9 +167,9 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			[group (driver _vehicle), _townLoc, 500] call BIS_fnc_taskPatrol;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 	};
 
@@ -186,9 +186,9 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 	};
 
@@ -205,9 +205,9 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 	};
 
@@ -224,9 +224,9 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			createVehicleCrew _vehicle;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 	};
 
@@ -242,9 +242,9 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			[group (driver _vehicle), _townLoc, 200] call BIS_fnc_taskPatrol;
 			{
 				_spawnedUnits pushback _x;
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach crew _vehicle;
-			_vehicle addEventHandler ["Killed",{(_this select 0) spawn {sleep 300; deleteVehicle _this}}];
+			[_vehicle] call tcz_fnc_objectCreation;
 		};
 	};
 
@@ -258,7 +258,7 @@ private _eAirOptions = ["UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O_Mi_24V", "UK3CB_GAF_O
 			_grp enableDynamicSimulation true; 
 			{
 				_x setSkill ["AimingAccuracy", round(0.15 * (_playerCount / 100))];
-				_x addEventHandler ["Killed",{(_this select 0) spawn {sleep 120; deleteVehicle _this}}];
+				[_x] call tcz_fnc_objectCreation;
 			} foreach units _grp;
 
 			_spawnedUnits pushback _grp;

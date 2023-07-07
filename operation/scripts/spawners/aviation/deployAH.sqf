@@ -38,6 +38,6 @@ if (!isnil "_map") then {
 		["UK_AAC",1], 
 		["fcr_enable",1,"magazine_set_1200",0,"pdoor",0,"gdoor",0]
 	] call BIS_fnc_initVehicle;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

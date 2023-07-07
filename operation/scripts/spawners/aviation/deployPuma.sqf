@@ -26,6 +26,6 @@ if (!isnil "_map") then {
 	_spawnVhc = createVehicle ["rksla3_puma_hc1_troop", _vhcloc, [], 0, "NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

@@ -31,11 +31,12 @@ if (!isnil "_map") then {
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
 	[_spawnVhc,["Woodland",1], true	] call BIS_fnc_initVehicle;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
+	
 	_spawnVhc = createVehicle ["rksla3_foxhound_lppv_tes", _posB,[],0,"NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
 	[_spawnVhc,["Woodland",1], true	] call BIS_fnc_initVehicle;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 

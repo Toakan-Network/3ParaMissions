@@ -27,6 +27,6 @@ if (!isnil "_map") then {
 	_spawnVhc = createVehicle ["2MERCS_CH47_HC6", _vhcloc, [], 0, "NONE"];
 	_spawnVhc setDir _dir;
 	_spawnVhc enableDynamicSimulation true;
-
+	[_spawnVhc] call tcz_fnc_objectCreation;
 };
 
