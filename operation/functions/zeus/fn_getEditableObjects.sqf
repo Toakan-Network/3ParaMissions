@@ -6,13 +6,12 @@
  */
 
 if (!isServer) exitWith {};
-
+private _scriptname = "fn_getEditableObjects";
 private _quarterMasters = (getArray (missionConfigFile >> worldName >> "arsenalObjects"));
 private _stevies = [];
 
 {
     private _stevie = (missionNamespace getVariable [_x, objNull]);
-
     if (!isNull _stevie) then {
         _stevies pushBack _stevie;
     };

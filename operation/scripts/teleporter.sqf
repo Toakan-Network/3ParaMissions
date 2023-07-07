@@ -14,14 +14,14 @@ switch (_map) do
 		//_aviationSpawn = [9804,18892,0];
 
 		// Training Areas
-		_caller addaction ["Range", 						{player setpos ([[9933,18310,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}]; 
-		_caller addaction ["Mortar FOB",					{player setpos ([[15475,9894,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}]; 
-		_caller addaction ["FIWAF FOB", 					{player setpos ([[17287,22967,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}]; 
-		_caller addaction ["Target Identification Range", 	{player setpos ([[11178,14538,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}]; 
-		_caller addaction ["Random Navigation Task", 		{player addaction ["Random Navigation", tcz_fnc_rtp]}]; 
+		_caller addaction ["Range", 						{player setpos ([[9933,18310,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}, [], 15]; 
+		_caller addaction ["Mortar FOB",					{player setpos ([[15475,9894,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}, [], 14]; 
+		_caller addaction ["FIWAF FOB", 					{player setpos ([[17287,22967,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}, [], 13]; 
+		_caller addaction ["Target Identification Range", 	{player setpos ([[11178,14538,0], 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}, [], 12]; 
+		_caller addaction ["Random Navigation Task", 		{player addaction ["Random Navigation", tcz_fnc_rtp]}, [], 15]; 
 		
 		// Navigation TP
-		_caller addaction ["Aviation Spawn", {player setpos ([getMarkerPos "aviation_respawn_location", 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}];
+		_caller addaction ["Aviation Spawn", {player setpos ([getMarkerPos "aviation_respawn_location", 2, 10, 5, 0, 0, 0] call bis_fnc_findsafepos)}, [], 10];
 	};
 
 	case "Napf":{
@@ -36,7 +36,7 @@ switch (_map) do
 };
 
 // General Actions
-_caller addaction [_tpName, ''];
-_caller addaction ["----------", ''];
+_caller addaction [_tpName, '', [], 25];
+_caller addaction ["----------", '', [], 20];
 
 _caller SetObjectTexture [0,_tpImage];
