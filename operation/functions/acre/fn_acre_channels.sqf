@@ -11,7 +11,7 @@
 
 //ACRE Channel Setup
 private _radios = ["ACRE_PRC152", "ACRE_PRC117F"];
-private _nets = ["HQCMD NET", "1PL NET", "2PL NET", "3PL NET", "FLUID NET 1", "FLUID NET 2", "A2A NET", "CAS NET", "FIRES NET", "CSS NET", "FINDER NET"];
+private _nets = ["HQCMD NET", "COY NET", "1PL NET", "2PL NET", "3PL NET", "FLUID NET 1", "FLUID NET 2", "A2A NET", "CAS NET", "FIRES NET", "CSS NET", "FINDER NET", "FLUID NET 3", "FLUID NET 4"];
 {
 	_radio = _x;
 	_presetName = "3para";
