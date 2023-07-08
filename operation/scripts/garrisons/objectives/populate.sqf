@@ -331,12 +331,12 @@ switch (true) do {
 			};
 		} foreach _nearby;
 		if (count _nearby == 0) then {
+				_isrunning = missionnamespace setVariable ["AOOnline", 0];
 				true;
 			} else {
 				false;
 			};
 		};
-	
 	if (_isrunning isEqualTo 1) then {
 		[_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
 		missionNamespace setVariable ["AOOnline", 0];
