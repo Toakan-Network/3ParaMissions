@@ -34,6 +34,12 @@ class tcz {
         class gcamSetup {};
     };
 
+    class players {
+        file = "functions\players";
+        class addAirChannel {};
+        class createAirChannel {};
+    }
+
     class tools {
         file = "functions\tools";
         class vehicleCamoNets {};

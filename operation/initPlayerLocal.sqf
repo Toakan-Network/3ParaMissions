@@ -17,5 +17,6 @@
 [player] execvm "scripts\eh\zeus_ping.sqf";		// Zeus Ping EH
 [player] call tcz_fnc_acre_setup; 	// ACRE Things
 [player] call tcz_fnc_addAdminChannel;	// Add to Admin Channel
+[player] call tcz_fnc_addAirChannel;	// Add to Admin Channel
 
 [2, "initPlayerLocal.sqf complete."] call tcz_fnc_log;

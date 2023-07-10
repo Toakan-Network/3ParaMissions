@@ -61,7 +61,7 @@ missionNamespace setVariable ["LogLevel", 2];
 		[
 		// ["task",value]
 		["UpdateDetails",	servername],
-		["UpdateState",format ["Training in The Land Warfare Centre."]],
+		["UpdateState",format ["Operation Midgard Serpent"]],
 		["UpdateSmallImageKey","3para"],
 		["UpdatePartySize",count playableUnits],
 		["UpdatePartyMax",getNumber(missionConfigFile >> "Header" >> "maxPlayers")],
@@ -98,5 +98,6 @@ if (_map isNotEqualTo _trainingmap) then {
 
 0 = call tcz_fnc_acre_setup; 
 0 = call tcz_fnc_createAdminChannel;
+0 = call tcz_fnc_createAirChannel;
 
 [2, format ["initServer Completed for map:%1", worldName]] call tcz_fnc_log;
