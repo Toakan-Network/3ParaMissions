@@ -1311,9 +1311,9 @@ force training_mag_dynamic_unconsciousTime = true;
 // TSP Animate
 force tsp_cba_animate_door = true;
 force tsp_cba_animate_dynamicReadyBush = true;
-force tsp_cba_animate_dynamicReadyFriend = 3;
+force tsp_cba_animate_dynamicReadyFriend = .5;
 force tsp_cba_animate_dynamicReadyFriendAngle = 35;
-force tsp_cba_animate_dynamicReadyObject = 2;
+force tsp_cba_animate_dynamicReadyObject = .5;
 tsp_cba_animate_dynamicReadyPoll = 0.25;
 tsp_cba_animate_dynamicReadyVertical = -0.1;
 force tsp_cba_animate_friendsAreObjects = false;
